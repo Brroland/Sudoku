@@ -1,4 +1,3 @@
-const table = require('table');
 const first1 = [
   [' ', 1, 9, ' ', 2, ' ', ' ', 8, 7],
   [' ', 6, 3, ' ', 8, 5, ' ', ' ', ' '],
@@ -114,6 +113,8 @@ const easy = [first1, second1, third1];
 const medium = [first2, second2, third2];
 const hard = [first3, second3, third3];
 
-const output = table.table(first1);
-console.log(output);
-
+module.exports = {
+  easy,
+  medium,
+  hard
+};
