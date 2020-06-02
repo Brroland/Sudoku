@@ -112,10 +112,7 @@ const third3 = [
 const easy = [first1, second1, third1];
 const medium = [first2, second2, third2];
 const hard = [first3, second3, third3];
-
+const scale = [easy, medium, hard];
 module.exports = {
-  easy,
-  medium,
-  hard
+  scale
 };
-
