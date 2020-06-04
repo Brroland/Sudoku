@@ -115,16 +115,16 @@ const hard = [h1, h2, h3];
 const scale = [easy, medium, hard];
 const initializer = (difficulty) => {
   const lucky = Math.floor(Math.random() * (scale[difficulty].length));
-  const board = new Array(8);
-  for (let i = 0; i < 8; i++) {
-    board[i] = new Array(8);
+  const board = new Array(scale[difficulty][lucky].length);
+  for (let i = 0; i < scale[difficulty][lucky].length; i++) {
+    board[i] = new Array(scale[difficulty][lucky][i].length);
   }
   const magic = {
     num: 0,
     master: false
   };
-  for (let i = 0; i < 8; i++) {
-    for (let j = 0; j < 8; j++) {
+  for (let i = 0; i < board.length; i++) {
+    for (let j = 0; j < board[i].length; j++) {
       board[i][j] = Object.create(magic);
     }
   }
