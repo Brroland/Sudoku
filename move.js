@@ -1,116 +1,45 @@
 const where = (destination, pos) => {
   switch (destination) {
-    case 1 :
-      if (pos[0] === 0) {
-        pos[0] = 8;
-      } else {
-        if (pos[0] === 8) {
-          pos[0] = 0;
-        } else { pos[0] += 1; }
-      }
-
-      if (pos[1] === 8) {
-        pos[1] = 0;
-      } else {
-        if (pos[1] === 0) {
-          pos[1] = 8;
-        } else { pos[1] -= 1; }
-      }
-      console.log('dél nyugatra mentél');
+    case 1:
+      pos[0] += 1;
+      pos[1] -= 1;
+      if (pos[1] < 0) { pos[1] = 8; }
+      if (pos[0] > 8) { pos[0] = 0; }
       break;
-    case 2 || 's':
-      if (pos[0] === 0) {
-        pos[0] = 8;
-      } else {
-        if (pos[0] === 8) {
-          pos[0] = 0;
-        } else { pos[0] += 1; }
-      }
-      console.log('délre mentél');
+    case 2:
+      pos[0] += 1;
+      if (pos[0] > 8) { pos[0] = 0; }
       break;
     case 3:
-      if (pos[1] === 8) {
-        pos[1] = 0;
-      } else {
-        if (pos[1] === 0) {
-          pos[1] = 8;
-        } else { pos[1] += 1; }
-      }
-      if (pos[0] === 0) {
-        pos[0] = 8;
-      } else {
-        if (pos[0] === 8) {
-          pos[0] = 0;
-        } else { pos[0] += 1; }
-      }
-      console.log('dél keletre mentél');
+      pos[1] += 1;
+      pos[0] += 1;
+      if (pos[1] > 8) { pos[1] = 0; }
+      if (pos[0] > 8) { pos[0] = 0; }
       break;
-    case 4 || 'a':
-      if (pos[0] === 0) {
-        pos[0] = 8;
-      } else {
-        if (pos[0] === 8) {
-          pos[0] = 0;
-        } else { pos[0] -= 1; }
-      }
-      console.log('nyugatra mentél');
+    case 4:
+      pos[1] -= 1;
+      if (pos[1] < 0) { pos[1] = 8; }
       break;
-    case 6 || 'd':
-      if (pos[1] === 8) {
-        pos[1] = 0;
-      } else {
-        if (pos[1] === 0) {
-          pos[1] = 8;
-        } else { pos[1] += 1; }
-      }
-      console.log('keletre mentél');
+    case 6:
+      pos[1] += 1;
+      if (pos[1] > 8) { pos[1] = 0; }
       break;
     case 7:
-      if (pos[0] === 0) {
-        pos[0] = 8;
-      } else {
-        if (pos[0] === 8) {
-          pos[0] = 0;
-        } else { pos[0] -= 1; }
-      }
-      if (pos[1] === 8) {
-        pos[1] = 0;
-      } else {
-        if (pos[1] === 0) {
-          pos[1] = 8;
-        } else { pos[1] -= 1; }
-      }
-      console.log('észak nyugatra mentél');
+      pos[0] -= 1;
+      pos[1] -= 1;
+      if (pos[1] < 0) { pos[1] = 8; }
+      if (pos[0] < 0) { pos[0] = 8; }
       break;
-    case 8 || 'w':
-      if (pos[0] === 0) {
-        pos[0] = 8;
-      } else {
-        if (pos[0] === 8) {
-          pos[0] = 0;
-        } else { pos[0] -= 1; }
-      }
-      console.log('északra mentél');
+    case 8:
+      pos[0] -= 1;
+      if (pos[0] < 0) { pos[0] = 8; }
       break;
     case 9:
-      if (pos[0] === 0) {
-        pos[0] = 8;
-      } else {
-        if (pos[0] === 8) {
-          pos[0] = 0;
-        } else { pos[0] -= 1; }
-      }
-      if (pos[1] === 8) {
-        pos[1] = 0;
-      } else {
-        if (pos[1] === 0) {
-          pos[1] = 8;
-        } else { pos[1] += 1; }
-      }
-      console.log('észak keletre mentél');
+      pos[0] -= 1;
+      pos[1] += 1;
+      if (pos[1] > 8) { pos[1] = 0; }
+      if (pos[0] < 0) { pos[0] = 8; }
       break;
-    case 'q':
-      process.exit();
   }
   return pos;
 };
