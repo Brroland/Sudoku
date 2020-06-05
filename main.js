@@ -1,4 +1,6 @@
 const diff = require('./menu');
+const map = require('./boards');
+const move = require('./move');
 const readl = require('readline-sync');
 
 console.clear();
@@ -24,4 +26,3 @@ switch (response) {
     break;
 }
 console.log(difficulty);
-
