@@ -6,7 +6,7 @@ const where = (destination, pos) => {
       if (pos[1] < 0) { pos[1] = 8; }
       if (pos[0] > 8) { pos[0] = 0; }
       break;
-    case 2:
+    case 2 || 's':
       pos[0] += 1;
       if (pos[0] > 8) { pos[0] = 0; }
       break;
@@ -16,11 +16,11 @@ const where = (destination, pos) => {
       if (pos[1] > 8) { pos[1] = 0; }
       if (pos[0] > 8) { pos[0] = 0; }
       break;
-    case 4:
+    case 4 || 'a':
       pos[1] -= 1;
       if (pos[1] < 0) { pos[1] = 8; }
       break;
-    case 6:
+    case 6 || 'd':
       pos[1] += 1;
       if (pos[1] > 8) { pos[1] = 0; }
       break;
@@ -30,7 +30,7 @@ const where = (destination, pos) => {
       if (pos[1] < 0) { pos[1] = 8; }
       if (pos[0] < 0) { pos[0] = 8; }
       break;
-    case 8:
+    case 8 || 'w':
       pos[0] -= 1;
       if (pos[0] < 0) { pos[0] = 8; }
       break;
