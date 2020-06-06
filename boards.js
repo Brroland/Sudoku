@@ -129,7 +129,7 @@ const initializer = (difficulty) => {
     }
   }
   for (let i = 0; i < board.length; i++) {
-    for (let j = 0; j < board.length; j++) {
+    for (let j = 0; j < board[i].length; j++) {
       board[i][j].num = scale[difficulty][lucky][i][j];
       if (board[i][j].num > 0) {
         board[i][j].master = true;
